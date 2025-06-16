@@ -11,17 +11,18 @@
         <h3>Autor: kuba2up</h3>
         <h4>Wszelkie prawa zastrzeżone</h4>
     </div>
+
+    {% comment "Komentarz autora" %}
+    Tutaj lista postów
+    {% endcomment %}
+
+    {% for post in posts %}
     <div>
-        <em>To jest wyróżniony tekst</em><br>
-        <strong>To jest pogrubiony tekst</strong><br>
-        <a href="https://strefakursow.pl">LINK</a>
+        <p>opublikowany: {{ post.publish_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <em>{{ post.text|linebreaksbr }}</em>
     </div>
-    <div>
-        <ul>
-            <li>Elementy listy</li>
-            <li>Elementy listy</li>
-            <li>Elementy listy</li>
-        </ul>
-    </div>
+    {% endfor %}
+
 </body>
 </html>
